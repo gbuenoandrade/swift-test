@@ -1,0 +1,11 @@
+name: presubmit
+
+on: [push]
+
+jobs:
+  run-tests:
+    runs-on: "macos-11.0"
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run tests
+      run: swift test --enable-code-coverage
